@@ -1,8 +1,0 @@
-- name: Start Azure VM
-  hosts: localhost
-  connection: local
-  tasks:
-    - name: Start virtual machine
-      azure_rm_virtualmachine:
-        resource_group: "TestRG"
-        name: "TestVM"
