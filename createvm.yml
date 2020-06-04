@@ -49,7 +49,7 @@
       security_group: myNetworkSecurityGroup
   - name: Create VM
     azure_rm_virtualmachine:
-      resource_group: ""MngIQRg"
+      resource_group: "MngIQRg"
       name: "MngIQVM"
       vm_size: Standard_DS1_v2
       admin_username: admin
