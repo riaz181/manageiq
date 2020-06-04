@@ -6,22 +6,22 @@
   tasks:
   - name: Create resource group
     azure_rm_resourcegroup:
-      name: "TestRG"
+      name: "ManageIQRG"
       location: eastus
   - name: Create virtual network
     azure_rm_virtualnetwork:
-      resource_group: "TestRG"
+      resource_group: "ManageIQRG"
       name: myVnet
       address_prefixes: "10.0.0.0/16"
   - name: Add subnet
     azure_rm_subnet:
-      resource_group: "TestRG"
+      resource_group: "ManageIQRG"
       name: mySubnet
       address_prefix: "10.0.1.0/24"
       virtual_network: myVnet
   - name: Create public IP address
     azure_rm_publicipaddress:
-      resource_group: "TestRG"
+      resource_group: "ManageIQRG"
       allocation_method: Static
       name: myPublicIP
     register: output_ip_address
@@ -30,7 +30,7 @@
       msg: "The public IP is {{ output_ip_address.state.ip_address }}."
   - name: Create Network Security Group that allows SSH
     azure_rm_securitygroup:
-      resource_group: "TestRG"
+      resource_group: "ManageIQRG"
       name: myNetworkSecurityGroup
       rules:
         - name: SSH
@@ -41,7 +41,7 @@
           direction: Inbound
   - name: Create virtual network interface card
     azure_rm_networkinterface:
-      resource_group: "TestRG"
+      resource_group: "ManageIQRG"
       name: myNIC
       virtual_network: myVnet
       subnet: mySubnet
@@ -49,8 +49,8 @@
       security_group: myNetworkSecurityGroup
   - name: Create VM
     azure_rm_virtualmachine:
-      resource_group: "TestRG"
-      name: "TestVM"
+      resource_group: "ManageIQRG"
+      name: "ManageIQVM"
       vm_size: Standard_DS1_v2
       admin_username: azureuser
       admin_password: Manageiq@123
