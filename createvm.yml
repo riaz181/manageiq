@@ -47,10 +47,24 @@
       subnet: mySubnet
       public_ip_name: myPublicIP
       security_group: myNetworkSecurityGroup
-  - name: Create VM
+  - name: Create First VM
     azure_rm_virtualmachine:
       resource_group: "MngIQRg"
       name: "DevBoxVM"
+      vm_size: Standard_DS1_v2
+      admin_username: azureuser
+      admin_password: Pakistan@1947
+      network_interfaces: myNIC
+      image:
+        offer: CentOS
+        publisher: OpenLogic
+        sku: '7.5'
+        version: latest
+        version: latest
+  - name: Create Second VM
+    azure_rm_virtualmachine:
+      resource_group: "MngIQRg"
+      name: "QABoxVM"
       vm_size: Standard_DS1_v2
       admin_username: azureuser
       admin_password: Pakistan@1947
