@@ -1,0 +1,9 @@
+  - name: Turn off and deallocate VM
+    hosts: localhost
+    tasks:
+    - name: Power off
+      azure_rm_virtualmachine:
+        resource_group: "MngIQRg"
+        name: testvm1
+        started: no
+        allocated: no
