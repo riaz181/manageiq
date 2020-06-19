@@ -1,6 +1,9 @@
-  - name: Delete VM
-    hosts: localhost
-    tasks:
+- name: Delete Azure VM
+  hosts: localhost
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+  connection: local
+  tasks:
     - name: Remove a VM and all resources that were autocreated
       azure_rm_virtualmachine:
         resource_group: "MngIQRg"
