@@ -1,7 +1,9 @@
 - name: Create VM with defaults
-  hosts: localhost
-  connection: local
-  tasks:
+    hosts: localhost
+    vars:
+    ansible_python_interpreter: /usr/bin/python3
+    connection: local
+    tasks:
    - name: Create VM
      azure_rm_virtualmachine:
       resource_group: "MngIQRg"
