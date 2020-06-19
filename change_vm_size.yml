@@ -1,5 +1,8 @@
   - name: Change VM size
     hosts: localhost
+    vars:
+    ansible_python_interpreter: /usr/bin/python3
+    connection: local
     tasks:
     - name: Update VM
       azure_rm_virtualmachine:
