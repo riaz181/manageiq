@@ -1,0 +1,9 @@
+  - name: Delete VM
+    hosts: localhost
+    tasks:
+    - name: Remove a VM and all resources that were autocreated
+      azure_rm_virtualmachine:
+        resource_group: "MngIQRg"
+        name: testvm1
+        remove_on_absent: all_autocreated
+        state: absent
