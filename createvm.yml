@@ -50,7 +50,7 @@
   - name: Create VM
     azure_rm_virtualmachine:
       resource_group: "MngIQRg"
-      name: "DevBoxVM"
+      name: "MngIQVM"
       vm_size: Standard_DS1_v2
       admin_username: azureuser
       admin_password: Pakistan@1947
@@ -59,4 +59,5 @@
         offer: CentOS
         publisher: OpenLogic
         sku: '7.5'
+        version: latest
         version: latest
