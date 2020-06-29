@@ -60,8 +60,3 @@
         publisher: OpenLogic
         sku: '7.5'
         version: latest
-  - name: Ansible Create Directory with mode setting Example
-    file:
-      path: /home/devops_dir
-      state: directory
-      mode: "u=rw,g=wx,o=rwx"
