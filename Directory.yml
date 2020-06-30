@@ -1,12 +1,6 @@
 - hosts: all
-  vars:
-    ansible_python_interpreter: /usr/bin/python3
-    tasks:
-    azure_rm_virtualmachine:
-    resource_group: "MngIQRg"
-    name: "MngIQVM"
-    admin_username: azureuser
-    admin_password: Pakistan@1947
+  tasks:
+  - name: ansible create directory example
     file:
       path: /tmp/devops_directory
       state: directory
