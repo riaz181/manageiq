@@ -1,6 +1,13 @@
-- hosts: all
+- hosts: localhost
   tasks:
-  - name: ansible create directory example
+  - name: ansible create multiple directory example
     file:
-      path: /tmp/devops_directory
+      path: "{{ item }}"
       state: directory
+    with_items:
+      - '/tmp/devops_systemltd/Configuration_Managemenet/QA'
+      - '/tmp/devops_systemltd/Configuration_Managemenet/QC'     
+      - '/tmp/devops_visionet/Configuration_Managemenet/QA'
+      - '/tmp/devops_visionet/Configuration_Managemenet/QC'
+      - '/tmp/devops_TechVista/Configuration_Managemenet/QA'
+      - '/tmp/devops_TechVista/Configuration_Managemenet/QA'
