@@ -2,9 +2,9 @@
 - hosts: localhost
   connection: local
   tasks:
-    - name: Create resource group
+    - name: Creating resource group - "SRG"
       azure_rm_resourcegroup:
-        name: SRG
+        name: "SRG"
         location: eastus
       register: rg
     - debug:
