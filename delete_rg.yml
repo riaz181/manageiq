@@ -1,11 +1,9 @@
 ---
 - hosts: localhost
-    vars:
-    ansible_python_interpreter: /usr/bin/python3
   tasks:
-    - name: Deleting resource group - "{{ name }}"
+    - name: Deleting resource group - "SRG"
       azure_rm_resourcegroup:
-        name: SRG
+        name: "SRG"
         state: absent
       register: rg
     - debug:
